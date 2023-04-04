@@ -32,10 +32,25 @@ col1.header('Input Options')
 @st.cache_data 
 def load_data(force_refresh=False):
     
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo dpkg -i google-chrome-stable_current_amd64.deb
+    chmod +x chromedriver
+    from selenium import webdriver
+
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+
+    driver = webdriver.Chrome(executable_path='/path/to/chromedriver', chrome_options=chrome_options)
+    
+    
+    
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+#     chrome_options.add_argument("--headless")
 #     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
-    driver = webdriver.Chrome(options=chrome_options)
+#     driver = webdriver.Chrome(options=chrome_options)
   
     url ="https://coinmarketcap.com/"
     driver.get(url)
