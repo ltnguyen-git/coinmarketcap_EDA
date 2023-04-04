@@ -33,7 +33,7 @@ col1.header('Input Options')
 def load_data(force_refresh=False):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(service=ChromeDriverManager().install(),options=chrome_options)
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
     url ="https://coinmarketcap.com/"
     driver.get(url)
     # Send a GET request to the URL
