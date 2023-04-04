@@ -12,7 +12,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 
 
 # Page layout (continued)
@@ -33,7 +33,9 @@ col1.header('Input Options')
 def load_data(force_refresh=False):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
+#     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
+    driver = webdriver.Chrome('D:\Download\chromedriver\chromedrive.exe',options=chrome_options)
+  
     url ="https://coinmarketcap.com/"
     driver.get(url)
     # Send a GET request to the URL
