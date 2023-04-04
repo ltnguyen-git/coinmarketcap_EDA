@@ -35,7 +35,7 @@ def load_data(force_refresh=False):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 #     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
-    driver = webdriver.Chrome('/path/to/chromedriver',options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options)
   
     url ="https://coinmarketcap.com/"
     driver.get(url)
