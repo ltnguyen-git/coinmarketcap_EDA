@@ -31,10 +31,11 @@ col1.header('Input Options')
 
 @st.cache_data 
 def load_data(force_refresh=False):
+    CHROME_PATH = '/usr/lib/chromium-browser/chromium-browser'
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 #     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(executable_path=CHROME_PATH,options=chrome_options)
   
     url ="https://coinmarketcap.com/"
     driver.get(url)
