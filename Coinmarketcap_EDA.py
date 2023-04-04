@@ -32,9 +32,7 @@ col1.header('Input Options')
 @st.cache_data 
 def load_data(force_refresh=False):
     
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo dpkg -i google-chrome-stable_current_amd64.deb
-    chmod +x chromedriver
+
     from selenium import webdriver
 
     chrome_options = webdriver.ChromeOptions()
