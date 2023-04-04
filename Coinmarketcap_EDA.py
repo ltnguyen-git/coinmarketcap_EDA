@@ -15,17 +15,6 @@ from selenium.webdriver.chrome.options import Options
 # from webdriver_manager.chrome import ChromeDriverManager
 
 
-def delete_selenium_log():
-    if os.path.exists('selenium.log'):
-        os.remove('selenium.log')
-
-
-def show_selenium_log():
-    if os.path.exists('selenium.log'):
-        with open('selenium.log') as f:
-            content = f.read()
-            st.code(content)
-
 # Page layout (continued)
 ## Divide page to 3 columns (col1 = sidebar, col2 and col3 = page contents)
 col1 = st.sidebar
@@ -46,7 +35,7 @@ def load_data(force_refresh=False):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 #     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
-    driver = webdriver.Chrome(options=chrome_options,service_log_path='selenium.log')
+    driver = webdriver.Chrome(options=chrome_options,executable_path='/path/to/chromedriver', service_log_path='/path/to/existing/folder')
   
     url ="https://coinmarketcap.com/"
     driver.get(url)
