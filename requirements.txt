@@ -7,5 +7,4 @@ requests==2.27.1
 json5==0.9.6
 selenium==4.8.0
 webdriver-manager==3.8.5
-undetected-chromedriver==2.2.1
-seleniumbase==1.15.3
+
